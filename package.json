@@ -1,0 +1,73 @@
+{
+  "name": "jaytech-rn-ui",
+  "version": "0.0.77",
+  "main": "./lib/index.js",
+  "files": [
+    "lib/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jwb81/jaytech-rn-ui.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jwb81/jaytech-rn-ui/issues"
+  },
+  "homepage": "https://jaytech.io",
+  "keywords": [
+    "android",
+    "ios",
+    "react native",
+    "component library",
+    "ui kit",
+    "bootstrap"
+  ],
+  "scripts": {
+    "precommit": "yarn lint",
+    "lint": "eslint src/**.js",
+    "test": "jest",
+    "build": "rm -rf ./lib && babel src --out-dir lib --source-maps inline --copy-files",
+    "publish_package": "npm run build && npm publish",
+    "b": "webpack --config webpack.config.js",
+    "build-browser": "cross-env BABEL_ENV=browser babel ./src --out-dir ./lib --source-maps --copy-files",
+    "build-module": "cross-env BABEL_ENV=module babel ./src --out-dir ./module --source-maps --copy-files",
+    "build-node": "babel ./src --out-dir ./dist --source-maps --copy-files"
+  },
+  "dependencies": {
+    "react-navigation": "^4.1.1",
+    "react-navigation-drawer": "^2.3.4",
+    "react-navigation-stack": "^2.1.1",
+    "react-navigation-tabs": "^2.7.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "cross-env": "^7.0.0",
+    "eslint": "^5.8.0",
+    "eslint-config-universe": "^1.0.7",
+    "metro-react-native-babel-preset": "^0.58.0",
+    "prettier": "^1.15.1",
+    "prop-types": "^15.7.2",
+    "react": "16.8.3",
+    "react-native": "^0.59",
+    "react-native-vector-icons": "^6.5.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-vector-icons": ">6.0.0"
+  },
+  "eslintConfig": {
+    "extends": "universe/native"
+  }
+}
